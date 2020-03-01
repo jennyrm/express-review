@@ -43,14 +43,27 @@ class App extends React.Component {
 
   getRestaurants() {
     // TODO
+    axios.get('/restaurants').then(response => {
+      console.log(response.data)
+      this.setState({
+        restaurants: response.data
+      })
+    })
   }
 
-  deleteRestaurant() {
+  deleteRestaurant(index) {
     // TODO
+    axios.delete(`/restaurants/${index}`).then(() => this.getRestaurants()).catch(err => console.error(err))
   }
-
+  
   addRestaurant() {
     // TODO
+    axios.post('/restaurants', {
+      name,
+      rating
+    })
+    .then(() => this.getRestaurants());
+    .catch((err) => console.error(err))
   }
 
   componentDidMount() {

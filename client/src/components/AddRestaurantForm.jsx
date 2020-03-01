@@ -19,6 +19,7 @@ class Form extends React.Component {
 
   handleSubmit() {
     // TODO
+    this.props.addRestaurant(this.state)
   }
 
 
