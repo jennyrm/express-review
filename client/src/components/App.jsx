@@ -62,7 +62,7 @@ class App extends React.Component {
       name,
       rating
     })
-    .then(() => this.getRestaurants());
+    .then(() => this.getRestaurants())
     .catch((err) => console.error(err))
   }
 
